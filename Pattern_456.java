@@ -13,10 +13,8 @@ public class Pattern_456 {
         // Traverse from right to left
         for (int i = nums.length - 1; i >= 0; i--) {
             
-            // If we find nums[i] < third → 132 pattern found
             if (nums[i] < third) return true;
 
-            // Pop all smaller elements and update "third"
             while (!stack.isEmpty() && nums[i] > stack.peek()) {
                 third = stack.pop();
             }
