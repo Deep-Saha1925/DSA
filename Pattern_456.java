@@ -10,7 +10,6 @@ public class Pattern_456 {
         Stack<Integer> stack = new Stack<>();
         int third = Integer.MIN_VALUE; // this is nums[k]
 
-        System.out.println(Integer.MIN_VALUE);
         // Traverse from right to left
         for (int i = nums.length - 1; i >= 0; i--) {
             
