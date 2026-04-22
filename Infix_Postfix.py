@@ -10,19 +10,13 @@ class Stack:
 
     def pop(self):
         if self.is_empty():
-            return "Stack is empty"
+            return None
         return self.stack.pop()
-
-    def size(self):
-        return len(self.stack)
 
     def peek(self):
         if self.is_empty():
-            return -1
+            return None
         return self.stack[-1]
-
-    def display(self):
-        print(self.stack)
 
 
 def precedence(e):
@@ -38,7 +32,8 @@ def precedence(e):
 s = Stack()
 exp = ""
 
-print("Enter character by character, press x to exit")
+# starting bracket
+s.push('(')
 
 l = []
 while True:
@@ -50,27 +45,25 @@ while True:
 # Add closing parenthesis
 l.append(')')
 
-# Example input (already in your code)
+# Your input
 # l = ['A', '+', 'B', '(', 'C', '*', 'D', '+', 'F', ')', ')']
 
 for val in l:
     if val.isalpha():
-        exp = exp + val
+        exp += val
+
+    elif val == '(':
+        s.push(val)
+
+    elif val == ')':
+        while s.peek() != '(':
+            exp += s.pop()
+        s.pop()  # remove '('
+
     else:
-        if val == '(':
-            s.push(val)
-        elif val == ')':
-            while s.peek() != '(':
-                exp = exp + s.pop()
-            s.pop()
-        else:
-            cp = precedence(val)
-            tp = precedence(s.peek())
+        # ✅ FIX: keep popping until condition satisfied
+        while (not s.is_empty()) and precedence(val) <= precedence(s.peek()):
+            exp += s.pop()
+        s.push(val)
 
-            if cp > tp:
-                s.push(val)
-            else:
-                exp = exp + s.pop()
-                s.push(val)
-
-print(exp)
+print("Postfix:", exp)
