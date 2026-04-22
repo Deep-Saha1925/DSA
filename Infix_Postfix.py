@@ -51,7 +51,7 @@ while True:
 l.append(')')
 
 # Example input (already in your code)
-l = ['A', '+', 'B', '(', 'C', '*', 'D', '+', 'F', ')', ')']
+# l = ['A', '+', 'B', '(', 'C', '*', 'D', '+', 'F', ')', ')']
 
 for val in l:
     if val.isalpha():
