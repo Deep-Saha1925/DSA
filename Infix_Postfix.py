@@ -126,7 +126,7 @@ for token in tokens:
 print("Postfix:", " ".join(postfix))
 
 
-# 🔹 EVALUATE
+# EVALUATE
 s2 = Stack()
 
 for token in postfix:
