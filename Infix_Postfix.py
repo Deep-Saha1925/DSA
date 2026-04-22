@@ -61,7 +61,7 @@ for val in l:
         s.pop()  # remove '('
 
     else:
-        # ✅ FIX: keep popping until condition satisfied
+        # keep popping until condition satisfied
         while (not s.is_empty()) and precedence(val) <= precedence(s.peek()):
             exp += s.pop()
         s.push(val)
