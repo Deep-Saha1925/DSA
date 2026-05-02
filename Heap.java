@@ -43,6 +43,25 @@ class Heap<T extends Comparable<T>> {
         upheap(list.size()-1);
     }
 
+    private void downheap(int idx){
+        int min = idx;
+        int left = left(idx);
+        int right = right(idx);
+
+        if(left < list.size() && list.get(min).compareTo(list.get(left)) > 0){
+            min = left;
+        }
+
+        if(right < list.size() && list.get(min).compareTo(list.get(right)) > 0){
+            min = right;
+        }
+
+        if(min != idx){
+            swap(min, idx);
+            downheap(min);
+        }
+    }
+
     public T remove() throws Exception {
         if(list.isEmpty()){
             throw new Exception("Removing from empty heap!!");
@@ -55,7 +74,6 @@ class Heap<T extends Comparable<T>> {
             list.set(0, last);
             downheap(0);
         }
-
 
         return item;
     }
