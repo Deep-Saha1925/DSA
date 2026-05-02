@@ -25,6 +25,19 @@ class Heap<T extends Comparable<T>> {
         return (2*i)+2;
     }
 
+    private void upheap(int idx){
+        if(idx == 0){
+            return;
+        }
+
+        int p = parent(idx);
+        
+        if(list.get(idx).compareTo(list.get(p))){
+            swap(idx, p);
+            upheap(p);
+        }
+    }
+
     public void insert(T value){
         list.add(value);
         upheap(list.size()-1);
