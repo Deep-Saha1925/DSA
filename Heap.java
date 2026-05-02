@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class Heap<T extends Comparable<T>> {
+public class Heap<T extends Comparable<T>> {
     private ArrayList<T> list;
 
     public Heap(){
@@ -76,6 +76,16 @@ class Heap<T extends Comparable<T>> {
         }
 
         return item;
+    }
+
+    public ArrayList<T> heapSort() throws Exception{
+        ArrayList<T> data = new ArrayList<>();
+
+        while(!list.isEmpty()){
+            data.add(this.remove());
+        }
+
+        return data;
     }
 
 }
