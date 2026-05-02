@@ -32,7 +32,7 @@ public class Heap<T extends Comparable<T>> {
 
         int p = parent(idx);
         
-        if(list.get(idx).compareTo(list.get(p))){
+        if(list.get(idx).compareTo(list.get(p)) < 0){
             swap(idx, p);
             upheap(p);
         }
@@ -86,6 +86,18 @@ public class Heap<T extends Comparable<T>> {
         }
 
         return data;
+    }
+
+    public static void main(String a[]) throws Exception{
+        Heap<Integer> heap = new Heap<>();
+
+        heap.insert(34);
+        heap.insert(25);
+        heap.insert(56);
+        heap.insert(78);
+
+        ArrayList sortedList = heap.heapSort();
+        System.out.println(sortedList);
     }
 
 }
