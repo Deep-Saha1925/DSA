@@ -1,6 +1,6 @@
 class Solution {
     public boolean carPooling(int[][] trips, int capacity) {
-        int[] stops = new int[1001]; // constraints: location <= 1000
+        int[] stops = new int[1001];
         
         // mark changes
         for (int[] trip : trips) {
