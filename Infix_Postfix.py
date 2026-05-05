@@ -28,15 +28,15 @@ def precedence(op):
         return 1
     return 0
 
-# s = Stack()
-# exp = ""
+s = Stack()
+exp = ""
 
-# # starting bracket
+# starting bracket
 # s.push('(')
 
 # l = []
 # while True:
-#     val = input("Enter character: ").lower()
+#     val = input("Enter character(q to quit): ").lower()
 #     if val == 'x':
 #         break
 #     l.append(val)
@@ -44,7 +44,7 @@ def precedence(op):
 # # Add closing parenthesis
 # l.append(')')
 
-# # Your input
+# # input
 # # l = ['A', '+', 'B', '(', 'C', '*', 'D', '+', 'F', ')', ')']
 
 # for val in l:
@@ -74,7 +74,6 @@ def precedence(op):
 
 # EVALUATE USING VALUE
 
-# 🔹 TAKE INPUT CHARACTER BY CHARACTER
 print("Enter expression character by character (press x to stop):")
 
 tokens = []
