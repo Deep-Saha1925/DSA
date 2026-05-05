@@ -1,4 +1,6 @@
+count = 0
 def partition(a, p, q):
+    global count
     pivot = a[p]
     i = p + 1
     j = q
@@ -14,6 +16,7 @@ def partition(a, p, q):
             temp = a[i]
             a[i] = a[j]
             a[j] = temp
+            count += 1
         else:
             break
     
@@ -28,8 +31,7 @@ def quickSort(l, i, j):
         p = partition(l, i, j)
         quickSort(l, i, p-1)
         quickSort(l, p+1, j)
-
-count=0
+        
 def quick(a, l, r):
     p = l
     left = l+1
@@ -59,14 +61,23 @@ def quick(a, l, r):
             return p            
 
 def quickSort2(l, i, j):
+    global count
     if i < j:
         p = quick(l, i, j)
         quickSort2(l, i, p-1)
         quickSort2(l, p+1, j)
         count+=1
 
-l = [9,4,12,7,1]
+# l = [9,4,12,7,1]
+l = [0,17,-3,90,-14,0,1,100]
+# l = [1,2,3,5,6,7,8,10]
+# l = [9,8,7,5,4,3,2,1]
+
+# l=[]
+# for ch in input("Enter name: "):
+#     l.append(ch)
+
 print(l)
-quickSort2(l, 0, len(l)-1)
+quickSort(l, 0, len(l)-1)
 print(l)
 print(count)
