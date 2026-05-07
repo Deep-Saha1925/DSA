@@ -55,6 +55,7 @@ class DoublyLinkedList:
             
         current.next = new_node
         
+        
     def traverse(self):
         current = self.head
         while current:
