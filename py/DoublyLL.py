@@ -20,4 +20,27 @@ class DoublyLinkedList:
             current.next = newNode
             newNode.prev = current
             
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        if self.head is not None:
+            self.head.prev = new_node
+        new_node.next = self.head
+        self.head = new_node
+    
+    
+        
+    def traverse(self):
+        current = self.head
+        while current:
+            print(current.data, end=' <-> ')
+            current = current.next
+        print("None")
+        
+    
+dl = DoublyLinkedList()
+dl.insert_at_end(10)
+dl.insert_at_end(20)
+dl.insert_at_beginning(5)
+dl.traverse()
+            
     
