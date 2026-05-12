@@ -19,7 +19,6 @@ class Solution {
             if(dfs(graph, vis, i))
                 return false;
         }
-
         return true;
     }
 
