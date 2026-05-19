@@ -11,7 +11,7 @@
 import java.util.Stack;
 
 class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public SortList_148 addTwoNumbers(SortList_148 l1, SortList_148 l2) {
         Stack<Integer> s1 = new Stack<>();
         Stack<Integer> s2 = new Stack<>();
         
@@ -27,7 +27,7 @@ class Solution {
         }
         
         int carry = 0;
-        ListNode result = null;
+        SortList_148 result = null;
         
         // Process stacks
         while (!s1.isEmpty() || !s2.isEmpty() || carry != 0) {
@@ -37,7 +37,7 @@ class Solution {
             if (!s2.isEmpty()) sum += s2.pop();
             
             // Create new node
-            ListNode node = new ListNode(sum % 10);
+            SortList_148 node = new SortList_148(sum % 10);
             node.next = result;
             result = node;
             
