@@ -14,53 +14,53 @@ class BST:
             return
         self._insert_recursively(self.root, data)
 
-    def _insert_recursively(self, node, data):
+    def insert_recursively(self, node, data):
         if data < node.data:
             if node.left is None:
                 node.left = Node(data)
             else:
-                self._insert_recursively(node.left, data)
+                self.insert_recursively(node.left, data)
         else:
             if node.right is None:
                 node.right = Node(data)
             else:
-                self._insert_recursively(node.right, data)
+                self.insert_recursively(node.right, data)
     
     def inorder_traversal(self):
-        return self._inorder_recursively(self.root)
+        return self.inorder_recursively(self.root)
     
-    def _inorder_recursively(self, node):
+    def inorder_recursively(self, node):
         if node is None:
             return []
-        return self._inorder_recursively(node.left) + [node.data] + self._inorder_recursively(node.right)
+        return self.inorder_recursively(node.left) + [node.data] + self.inorder_recursively(node.right)
 
     def preorder_traversal(self):
-        return self._preorder_recursively(self.root)
+        return self.preorder_recursively(self.root)
     
-    def _preorder_recursively(self, node):
+    def preorder_recursively(self, node):
         if node is None:
             return []
-        return [node.data] + self._preorder_recursively(node.left) + self._preorder_recursively(node.right)
+        return [node.data] + self.preorder_recursively(node.left) + self.preorder_recursively(node.right)
     
     def postorder_traversal(self):
-        return self._postorder_recursively(self.root)
+        return self.postorder_recursively(self.root)
     
-    def _postorder_recursively(self, node):
+    def postorder_recursively(self, node):
         if node is None:
             return []
-        return self._postorder_recursively(node.left) + self._postorder_recursively(node.right) + [node.data]
-    
+        return self.postorder_recursively(node.left) + self.postorder_recursively(node.right) + [node.data]
+
     def display(self):
         if not self.root:
             print("Tree is empty")
             return
-        self._display_recursively(self.root, 0)
+        self.display_recursively(self.root, 0)
 
-    def _display_recursively(self, node, level):
+    def display_recursively(self, node, level):
         if node is not None:
-            self._display_recursively(node.right, level + 1)
+            self.display_recursively(node.right, level + 1)
             print(' ' * 4 * level + '-> ' + str(node.data))
-            self._display_recursively(node.left, level + 1)
+            self.display_recursively(node.left, level + 1)
 
 
 # Example usage
