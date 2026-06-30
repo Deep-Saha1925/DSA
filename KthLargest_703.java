@@ -1,26 +1,26 @@
-class Solution {
+class KthLargest {
 
-    int count = 0;
-    int ans = 0;
+    PriorityQueue<Integer> heap;
+    int k;
 
-    public int kthLargest(TreeNode root, int k) {
-        reverseInorder(root, k);
-        return ans;
+    public KthLargest(int k, int[] nums) {
+
+        this.k = k;
+        heap = new PriorityQueue<>();
+
+        for (int num : nums) {
+            add(num);
+        }
     }
 
-    private void reverseInorder(TreeNode root, int k) {
+    public int add(int val) {
 
-        if (root == null)
-            return;
+        heap.offer(val);
 
-        reverseInorder(root.right, k);
-
-        count++;
-        if (count == k) {
-            ans = root.val;
-            return;
+        if (heap.size() > k) {
+            heap.poll();
         }
 
-        reverseInorder(root.left, k);
+        return heap.peek();
     }
 }
