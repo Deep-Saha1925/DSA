@@ -16,4 +16,14 @@ class Solution {
 
         return provinces;
     }
+
+    private void dfs(int city, int[][] graph, boolean[] vis){
+        vis[city] = true;
+
+        for(int j=0; j<graph.length; j++){
+            if(graph[city][j] == 1 && !vis[j]){
+                dfs(j, graph, vis);
+            }
+        }
+    }
 }
