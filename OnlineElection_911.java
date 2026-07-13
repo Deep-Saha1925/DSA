@@ -11,6 +11,20 @@ class TopVotedCandidate {
 
         int leader = -1;
         int maxVotes = 0;
+
+         for (int i = 0; i < persons.length; i++) {
+
+            int person = persons[i];
+
+            votes.put(person, votes.getOrDefault(person, 0) + 1);
+
+            if (votes.get(person) >= maxVotes) {
+                maxVotes = votes.get(person);
+                leader = person;
+            }
+
+            leaders[i] = leader;
+        }
     }
     
     public int q(int t) {
