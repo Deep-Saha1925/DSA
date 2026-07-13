@@ -28,9 +28,6 @@ class TopVotedCandidate {
     }
     
     public int q(int t) {
-
-        public int q(int t) {
-
         int left = 0;
         int right = times.length - 1;
 
@@ -44,6 +41,7 @@ class TopVotedCandidate {
                 right = mid - 1;
         }
 
+        return leaders[right];
         
     }
 }
@@ -52,4 +50,4 @@ class TopVotedCandidate {
  * Your TopVotedCandidate object will be instantiated and called as such:
  * TopVotedCandidate obj = new TopVotedCandidate(persons, times);
  * int param_1 = obj.q(t);
- */
+ */O
