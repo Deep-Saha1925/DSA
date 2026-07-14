@@ -1,0 +1,31 @@
+class TimeMap {
+
+    class Pair {
+        int time;
+        String value;
+
+        Pair(int time, String value) {
+            this.time = time;
+            this.value = value;
+        }
+    }
+
+    public TimeMap() {
+        
+    }
+    
+    public void set(String key, String value, int timestamp) {
+        
+    }
+    
+    public String get(String key, int timestamp) {
+        
+    }
+}
+
+/**
+ * Your TimeMap object will be instantiated and called as such:
+ * TimeMap obj = new TimeMap();
+ * obj.set(key,value,timestamp);
+ * String param_2 = obj.get(key,timestamp);
+ */
