@@ -27,15 +27,21 @@ class TimeMap {
             return "";
         }
 
-        List<Pair> l = map.get(key);
+        List<Pair> list = map.get(key);
 
-        int l=0, r=l.size()-1;
+        int l=0, r=list.size()-1;
 
         String ans = "";
         while(l <= r){
             int m = l + (r-l) / 2;
 
-            
+            if(list.get(m).time <= timestamp){
+                ans = list.get(m).value;
+                l = m+1;
+            } else {
+                r = m-1;
+            }          
+
         }
 
         return ans;
