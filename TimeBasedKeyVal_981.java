@@ -17,7 +17,9 @@ class TimeMap {
     }
     
     public void set(String key, String value, int timestamp) {
-        
+        map.putIfAbsent(key, new ArrayList<>());
+
+        map.get(key).add(new Pair(timestamp, value));
     }
     
     public String get(String key, int timestamp) {
