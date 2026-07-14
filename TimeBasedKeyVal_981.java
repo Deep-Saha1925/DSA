@@ -10,8 +10,10 @@ class TimeMap {
         }
     }
 
+    Map<String, List<Pair>> map;
+
     public TimeMap() {
-        
+        map = new HashMap<>();
     }
     
     public void set(String key, String value, int timestamp) {
