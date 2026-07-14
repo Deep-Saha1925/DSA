@@ -23,7 +23,22 @@ class TimeMap {
     }
     
     public String get(String key, int timestamp) {
-        
+        if(!map.containsKey(key)){
+            return "";
+        }
+
+        List<Pair> l = map.get(key);
+
+        int l=0, r=l.size()-1;
+
+        String ans = "";
+        while(l <= r){
+            int m = l + (r-l) / 2;
+
+            
+        }
+
+        return ans;
     }
 }
 
