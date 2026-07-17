@@ -21,8 +21,6 @@ class Solution {
             sb.append(Character.toUpperCase(c));
             count++;
         }
-
-    
         return sb.reverse().toString();
     }
 }
