@@ -9,6 +9,17 @@ class Solution {
     }
 
     private void backtrack(int start, int n, int k, List<Integer> list){
-        
+        if(list.size() == k){
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+
+        for(int i=start; i<=n; i++){
+            list.add(i);
+
+            backtrack(i+1, n, k, list);
+
+            list.remove(list.size()-1);
+        }
     }
 }
