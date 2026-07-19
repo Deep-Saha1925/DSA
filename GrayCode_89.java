@@ -7,7 +7,9 @@ class Solution {
         int total = 1 << n;
 
         for(int i=0; i<total; i++){
-            ans.add()
+            ans.add(i ^ (i >> 1));
         }
+
+        return ans;
     }
 }
