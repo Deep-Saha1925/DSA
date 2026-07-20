@@ -31,5 +31,22 @@ class Solution {
             return list;
         }
 
+        for (int i = start; i <= end; i++) {
 
+            List<TreeNode> leftTrees = build(start, i - 1);
+            List<TreeNode> rightTrees = build(i + 1, end);
+
+            for (TreeNode left : leftTrees) {
+
+                for (TreeNode right : rightTrees) {
+
+                    TreeNode root = new TreeNode(i);
+
+                    root.left = left;
+                    root.right = right;
+
+                    list.add(root);
+                }
+            }
+        }
 }
