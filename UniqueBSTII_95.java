@@ -22,4 +22,14 @@ class Solution {
         return build(1, n);
     }
 
+    private List<TreeNode> build(int start, int end) {
+
+        List<TreeNode> list = new ArrayList<>();
+
+        if (start > end) {
+            list.add(null);
+            return list;
+        }
+
+
 }
