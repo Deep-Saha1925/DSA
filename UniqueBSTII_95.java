@@ -49,4 +49,7 @@ class Solution {
                 }
             }
         }
+
+        return list;
+    }
 }
