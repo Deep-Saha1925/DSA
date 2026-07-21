@@ -11,8 +11,7 @@ class Solution {
                 if (Integer.bitCount(hour) +
                     Integer.bitCount(minute) == turnedOn) {
 
-                    ans.add(hour + ":" +
-                            (minute < 10 ? "0" : "") + minute);
+                    ans.add(hour + ":" + (minute < 10 ? "0" : "") + minute);
                 }
             }
         }
