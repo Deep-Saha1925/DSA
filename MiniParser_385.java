@@ -1,3 +1,5 @@
-public class MiniParser_385 {
-    
+class Solution {
+    public NestedInteger deserialize(String s) {
+        
+    }
 }
