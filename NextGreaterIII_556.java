@@ -1,3 +1,5 @@
-public class NextGreaterIII_556 {
-    
+class Solution {
+    public int nextGreaterElement(int n) {
+        
+    }
 }
