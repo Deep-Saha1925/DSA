@@ -12,6 +12,15 @@ class Solution {
                     ones++;
                 }
             }
+
+            for(int i=m; i>= zeros; i--){
+                for(int j=n; j>=ones; j--){
+                    dp[i][j] = Math.max(
+                        dp[i][j],
+                        dp[i-zeros][j-ones]+1
+                    );
+                }
+            }
         }
     }
 }
