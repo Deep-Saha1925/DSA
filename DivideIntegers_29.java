@@ -1,21 +1,34 @@
 class Solution {
+
     public int divide(int dividend, int divisor) {
-        if(divisor == Integer.MAX_VALUE && divisor == -1)
+
+        if (dividend == Integer.MIN_VALUE &&
+            divisor == -1)
             return Integer.MAX_VALUE;
 
         long dvd = Math.abs((long) dividend);
-        long div = Math.abs((long) divisor);
+        long dvs = Math.abs((long) divisor);
 
         int ans = 0;
 
-        while(dvd <= div){
-            long temp = div;
-            int m = 1;
+        while (dvd >= dvs) {
 
-            while(dvd >= (temp << 1)){
+            long temp = dvs;
+            int multiple = 1;
+
+            while (dvd >= (temp << 1)) {
+
                 temp <<= 1;
-                m <<= 1;
+                multiple <<= 1;
             }
-        }        
+
+            dvd -= temp;
+            ans += multiple;
+        }
+
+        if ((dividend < 0) ^ (divisor < 0))
+            ans = -ans;
+
+        return ans;
     }
 }
