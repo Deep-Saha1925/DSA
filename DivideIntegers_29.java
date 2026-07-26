@@ -12,8 +12,8 @@ class Solution {
             long temp = div;
             int m = 1;
 
-            while(dvd >= (t << 1)){
-                t <<= 1;
+            while(dvd >= (temp << 1)){
+                temp <<= 1;
                 m <<= 1;
             }
         }        
