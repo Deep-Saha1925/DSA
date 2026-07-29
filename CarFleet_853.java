@@ -10,5 +10,18 @@ class Solution {
         }
 
         Arrays.sort(cars, (a, b) -> Double.compare(b[0], a[0]));
+
+        int fleets = 0;
+        double lastTime = 0;
+
+        for (int i = 0; i < n; i++) {
+
+            if (cars[i][1] > lastTime) {
+                fleets++;
+                lastTime = cars[i][1];
+            }
+        }
+
+        return fleets;
     }
 }
