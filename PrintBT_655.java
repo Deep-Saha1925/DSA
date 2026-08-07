@@ -53,4 +53,13 @@ class Solution {
         fill(root.left, ans, row + 1, left, mid - 1);
         fill(root.right, ans, row + 1, mid + 1, right);
     }
+
+    private int height(TreeNode root) {
+
+        if (root == null)
+            return -1;
+
+        return 1 + Math.max(height(root.left),
+                            height(root.right));
+    }
 }
