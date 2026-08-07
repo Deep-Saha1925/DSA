@@ -36,4 +36,21 @@ class Solution {
 
         return ans;
     }
+
+    private void fill(TreeNode root,
+                      List<List<String>> ans,
+                      int row,
+                      int left,
+                      int right) {
+
+        if (root == null)
+            return;
+
+        int mid = (left + right) / 2;
+
+        ans.get(row).set(mid, String.valueOf(root.val));
+
+        fill(root.left, ans, row + 1, left, mid - 1);
+        fill(root.right, ans, row + 1, mid + 1, right);
+    }
 }
