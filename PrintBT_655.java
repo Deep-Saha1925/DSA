@@ -31,5 +31,9 @@ class Solution {
 
             ans.add(row);
         }
+
+        fill(root, ans, 0, 0, cols - 1);
+
+        return ans;
     }
 }
