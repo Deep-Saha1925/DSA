@@ -16,6 +16,7 @@ class LinkedList:
             current = self.head
             while current.next != None:
                 current = current.next
+
             current.next = newNode
             
     def insert_at_beginning(self, data):
