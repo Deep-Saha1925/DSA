@@ -34,6 +34,7 @@ class Polynomial:
         print(" + ".join(result))
 
 poly = Polynomial()
+
 poly.insert_item(3, 2)
 poly.insert_item(5, 1)
 poly.insert_item(2, 0)
