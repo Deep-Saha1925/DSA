@@ -18,7 +18,7 @@ class DoublyLinkedList:
                 current = current.next
             current.next = newNode
             newNode.prev = current
-            
+ 
     def insert_at_beginning(self, data):
         new_node = Node(data)
         if self.head is not None:
