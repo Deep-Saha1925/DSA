@@ -7,7 +7,7 @@ class Node:
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
-        
+ 
     def insert_at_end(self, data):
         newNode = Node(data)
         if self.head == None:
