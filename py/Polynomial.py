@@ -1,3 +1,4 @@
+# POLYNOMIAL
 class Node:
     def __init__(self, coeff, exp):
         self.coeff = coeff
