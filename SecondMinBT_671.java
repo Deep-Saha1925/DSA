@@ -15,6 +15,10 @@
  */
 class Solution {
     public int findSecondMinimumValue(TreeNode root) {
-        
+        int min = root.val;
+
+        dfs(root, min);
+
+        return ans == Long.MAX_VALUE ? -1 : (int) ans;
     }
 }
