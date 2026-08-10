@@ -23,8 +23,11 @@ class Solution {
     }
 
     private void dfs(TreeNode root, int min){
-        if(node == null) return;
+        if(root == null) return;
 
-        
+        if(root.val > min)
+            ans = Math.min(ans, root.val);
+
+            
     }
 }
