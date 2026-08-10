@@ -21,4 +21,10 @@ class Solution {
 
         return ans == Long.MAX_VALUE ? -1 : (int) ans;
     }
+
+    private void dfs(TreeNode root, int min){
+        if(node == null) return;
+
+        
+    }
 }
