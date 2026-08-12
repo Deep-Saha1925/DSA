@@ -18,6 +18,13 @@ class Solution {
     private Map<Integer, Integer> map = new HashMap<>();
 
     public TreeNode constructFromPrePost(int[] preorder, int[] postorder) {
-        
+        for(int i=0; i<postorder.length; i++){
+            map.put(postorder[i], i);
+        }
+
+        return build(
+            preorder, 0, preorder.length - 1,
+            postorder, 0, postorder.length - 1
+        );
     }
 }
