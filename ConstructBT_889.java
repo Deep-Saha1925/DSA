@@ -27,4 +27,11 @@ class Solution {
             postorder, 0, postorder.length - 1
         );
     }
+
+    private TreeNode build(
+        int[] preorder, int preStr, int preEnd,
+        int[] postorder, int postStr, int postEnd
+    ) {
+        
+    }
 }
