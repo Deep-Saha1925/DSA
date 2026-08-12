@@ -14,7 +14,10 @@
  * }
  */
 class Solution {
+
+    private Map<Integer, Integer> map = new HashMap<>();
+
     public TreeNode constructFromPrePost(int[] preorder, int[] postorder) {
-        return null;
+        
     }
 }
