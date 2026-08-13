@@ -15,6 +15,31 @@ class Solution {
         }
 
         // Try every possible left subtree size
-        
+        for (int leftNodes = 1; leftNodes < n; leftNodes += 2) {
+
+            int rightNodes = n - 1 - leftNodes;
+
+            List<TreeNode> leftTrees =
+                    allPossibleFBT(leftNodes);
+
+            List<TreeNode> rightTrees =
+                    allPossibleFBT(rightNodes);
+
+            // Combine every left tree with every right tree
+            for (TreeNode left : leftTrees) {
+
+                for (TreeNode right : rightTrees) {
+
+                    TreeNode root = new TreeNode(0);
+
+                    root.left = left;
+                    root.right = right;
+
+                    result.add(root);
+                }
+            }
+        }
+
+        return result;
     }
 }
