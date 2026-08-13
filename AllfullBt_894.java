@@ -1,3 +1,8 @@
-public class AllfullBt_894 {
-    
+class Solution {
+
+    public List<TreeNode> allPossibleFBT(int n) {
+
+        List<TreeNode> result = new ArrayList<>();
+
+        
 }
