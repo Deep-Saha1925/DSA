@@ -60,4 +60,12 @@ class Solution {
 
         return new ArrayList<>();
     }
+
+    private void buildParentMap(TreeNode node, TreeNode parent, Map<TreeNode, TreeNode> parentMap) {
+        if (node == null) return;
+
+        parentMap.put(node, parent);
+        buildParentMap(node.left, node, parentMap);
+        buildParentMap(node.right, node, parentMap);
+    }
 }
