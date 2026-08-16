@@ -15,6 +15,6 @@
  */
 class Solution {
     public boolean isUnivalTree(TreeNode root) {
-        
+        return true;
     }
 }
