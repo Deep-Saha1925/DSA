@@ -17,4 +17,8 @@ class Solution {
     public boolean isUnivalTree(TreeNode root) {
         return true;
     }
+
+    private boolean check(TreeNode root, int value){
+        if (root == null)   return true;
+    }
 }
