@@ -18,4 +18,12 @@ class Solution {
 
         return dfs(map, id);
     }
+
+    private int dfs(Map<Integer, Employee> map, int id){
+        Employee emp = map.get(id);
+        int total = emp.importance;
+        
+
+        return total;
+    }
 }
