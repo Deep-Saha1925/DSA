@@ -9,6 +9,13 @@ class Employee {
 
 class Solution {
     public int getImportance(List<Employee> employees, int id) {
-        return id;
+        Map<Integer, Employee> map = new HashMap<>();
+
+        // Store employees by their ID
+        for (Employee e : employees) {
+            map.put(e.id, e);
+        }
+
+        return dfs(map, id);
     }
 }
