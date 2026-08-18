@@ -23,6 +23,9 @@ class Solution {
         Employee emp = map.get(id);
         int total = emp.importance;
         
+        for(int subId: emp.subordinates){
+            total += dfs(map, subId);
+        }
 
         return total;
     }
