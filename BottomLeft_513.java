@@ -18,6 +18,13 @@ class Solution {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         int ans = root.val;
-        
+
+        while(!queue.isEmpty()){
+            int size = q.size();
+
+            for(int i=0; i<size; i++){
+                
+            }
+        }
     }
 }
