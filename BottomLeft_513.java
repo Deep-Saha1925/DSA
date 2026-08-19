@@ -15,6 +15,9 @@
  */
 class Solution {
     public int findBottomLeftValue(TreeNode root) {
-        return root.left.val;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        int ans = root.val;
+        
     }
 }
