@@ -15,6 +15,6 @@
  */
 class Solution {
     public int sumRootToLeaf(TreeNode root) {
-        return root.val + sumRootToLeaf(root.left) + sumRootToLeaf(root.right);
+        return dfs(root, 0);
     }
 }
