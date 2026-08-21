@@ -27,6 +27,6 @@ class Solution {
             return val;
         }
 
-        
+        return dfs(node.left, val) + dfs(node.right, val);
     }
 }
