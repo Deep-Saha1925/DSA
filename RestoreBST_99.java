@@ -18,17 +18,27 @@ class Solution {
     TreeNode first = null, second = null, prev = null;
 
     public void recoverTree(TreeNode root) {
-        intorder(root);
+        inorder(root);
 
         int t = first.val;
         first.val = second.val;
         second.val = t;
     }
 
-    private void inorder(Treenode node){
+    private void inorder(TreeNode node){
         if(node == null)  return;
 
         inorder(node.left);
-        
+
+        if(prev != null && prev.val > node.val){
+            if(first == null)
+                first = prev;
+
+            second = node;
+        }
+
+        prev = node;
+
+        inorder(node.right);
     }
 }
