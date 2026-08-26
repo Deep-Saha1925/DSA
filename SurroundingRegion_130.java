@@ -14,5 +14,19 @@ class Solution {
             dfs(board, 0, j);
             dfs(board, rows - 1, j);
         }
+
+        // Convert surrounded O -> X
+        // Convert safe S -> O
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+
+                if (board[i][j] == 'O') {
+                    board[i][j] = 'X';
+                }
+                else if (board[i][j] == 'S') {
+                    board[i][j] = 'O';
+                }
+            }
+        }
     }
 }
