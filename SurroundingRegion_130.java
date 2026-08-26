@@ -1,5 +1,7 @@
 class Solution {
+
     public void solve(char[][] board) {
+
         int rows = board.length;
         int cols = board[0].length;
 
@@ -42,5 +44,20 @@ class Solution {
         if (board[row][col] != 'O') {
             return;
         }
+
+        // Mark as safe
+        board[row][col] = 'S';
+
+        // Up
+        dfs(board, row - 1, col);
+
+        // Down
+        dfs(board, row + 1, col);
+
+        // Left
+        dfs(board, row, col - 1);
+
+        // Right
+        dfs(board, row, col + 1);
     }
 }
