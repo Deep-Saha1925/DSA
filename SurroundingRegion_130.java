@@ -29,4 +29,13 @@ class Solution {
             }
         }
     }
+
+    private void dfs(char[][] board, int row, int col) {
+
+        // Out of bounds
+        if (row < 0 || row >= board.length ||
+            col < 0 || col >= board[0].length) {
+            return;
+        }
+    }
 }
