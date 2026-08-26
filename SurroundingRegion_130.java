@@ -37,5 +37,10 @@ class Solution {
             col < 0 || col >= board[0].length) {
             return;
         }
+
+        // Not an O
+        if (board[row][col] != 'O') {
+            return;
+        }
     }
 }
