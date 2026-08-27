@@ -1,5 +1,7 @@
 class Solution {
     public int minStartValue(int[] nums) {
-        return 0;
+        int sum = 0, minSum = 0;
+
+        return minSum;
     }
 }
