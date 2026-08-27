@@ -8,6 +8,6 @@ class Solution {
             minSum = Math.min(minSum, sum);
         }
 
-        return 1 - minSum;
+        return 1-minSum;
     }
 }
