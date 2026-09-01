@@ -27,4 +27,25 @@ class Solution {
 
         return ans;
     }
+
+    void dfs1(int node, int parent){
+        count[node] = 1;
+
+        for(int next: tree[node]){
+            if(next == parent) continue;
+
+            dfs1(next, node);
+            count[node] += count[next];
+            ans[node] += ans[next] + count[next];
+        }
+    }
+
+    void dfs2(int node, int parent){
+        for(int next: tree[node]){
+            if(next == parent) continue;
+
+            ans[next] = ans[node] - count[next] + (n - count[next]);
+            dfs2(next, node);
+        }
+    }
 }
