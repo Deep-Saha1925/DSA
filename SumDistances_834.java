@@ -14,7 +14,10 @@ class Solution {
             tree[i] = new ArrayList<>();
         }
 
-        
+        for(int[] e: edges){
+            tree[e[0]].add(e[1]);
+            tree[e[1]].add(e[0]);
+        }
 
         return ans;
     }
