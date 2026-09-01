@@ -22,7 +22,8 @@ class Solution {
         ans = new int[n];
         count = new int[n];
 
-        
+        dfs1(0, -1);
+        dfs2(0, -1);
 
         return ans;
     }
