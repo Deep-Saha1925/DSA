@@ -19,6 +19,11 @@ class Solution {
             tree[e[1]].add(e[0]);
         }
 
+        ans = new int[n];
+        count = new int[n];
+
+        
+
         return ans;
     }
 }
