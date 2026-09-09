@@ -1,5 +1,6 @@
 class Solution {
     public int lengthLongestPath(String input) {
+
         String[] lines = input.split("\n");
 
         int[] pathLength = new int[lines.length + 1];
@@ -7,21 +8,28 @@ class Solution {
 
         for (String line : lines) {
 
-            // Find depth (number of \t)
             int depth = 0;
-            while (line.charAt(depth) == '\t') {
+
+            // Count \t
+            while (depth < line.length() && line.charAt(depth) == '\t') {
                 depth++;
             }
 
-            // Remove tabs
             String name = line.substring(depth);
 
-            // Calculate current path length
-            pathLength[depth] = pathLength[depth - 1] + name.length() + 1;
+            // Root level
+            if (depth == 0) {
+                pathLength[depth] = name.length();
+            } 
+            // Other levels
+            else {
+                pathLength[depth] =
+                    pathLength[depth - 1] + 1 + name.length();
+            }
 
-            // If it is a file
+            // Check if it is a file
             if (name.contains(".")) {
-                max = Math.max(max, pathLength[depth] - 1);
+                max = Math.max(max, pathLength[depth]);
             }
         }
 
