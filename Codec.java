@@ -1,17 +1,16 @@
 import java.util.HashMap;
 
-public class Codec {
+class Codec {
 
     HashMap<String, String> map = new HashMap<>();
     int id = 0;
 
     public String encode(String longUrl) {
 
-        String key = String.valueOf(id++);
-
+        String key = "url" + id++;
         map.put(key, longUrl);
 
-        return "http://tinyurl.com/" + key;
+        return key;
     }
 
     public String decode(String shortUrl) {
