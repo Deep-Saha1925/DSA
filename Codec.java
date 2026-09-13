@@ -1,6 +1,6 @@
-import java.util.HashMap;
+import java.util.*;
 
-class Codec {
+public class Codec {
 
     HashMap<String, String> map = new HashMap<>();
     int id = 0;
@@ -15,8 +15,6 @@ class Codec {
 
     public String decode(String shortUrl) {
 
-        String key = shortUrl.substring(shortUrl.lastIndexOf("/") + 1);
-
-        return map.get(key);
+        return map.get(shortUrl);
     }
 }
