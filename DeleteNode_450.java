@@ -14,7 +14,6 @@
  * }
  */
 class Solution {
-
     public TreeNode deleteNode(TreeNode root, int key) {
 
         if (root == null)
@@ -45,7 +44,6 @@ class Solution {
     }
 
     private TreeNode findMin(TreeNode node) {
-
         while (node.left != null)
             node = node.left;
 
