@@ -27,7 +27,6 @@ class Solution {
             root.right = deleteNode(root.right, key);
         }
         else {
-
             // Case 1 & 2
             if (root.left == null)
                 return root.right;
@@ -42,7 +41,6 @@ class Solution {
 
             root.right = deleteNode(root.right, successor.val);
         }
-
         return root;
     }
 
