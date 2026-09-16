@@ -3,7 +3,6 @@ class Solution {
         int n = temperatures.length;
 
         int[] ans = new int[n];
-
         Stack<Integer> s = new Stack<>();
 
         for(int i=0; i<n; i++){
@@ -11,10 +10,8 @@ class Solution {
                 int idx = s.pop();
                 ans[idx] = i-idx;
             }
-
             s.push(i);
         }
-
         return ans;
     }
 }
