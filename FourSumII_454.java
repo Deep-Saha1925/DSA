@@ -7,5 +7,15 @@ class Solution {
                 map.put((a+b), map.getOrDefault((a+b), 0)+1);
             }
         }
+
+        int count = 0;
+
+        for(int c: nums3){
+            for(int d: nums4){
+                count += map.getOrDefault(-(c+d), 0);
+            }
+        }
+
+        return count;
     }
 }
