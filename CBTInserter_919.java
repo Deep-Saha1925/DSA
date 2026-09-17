@@ -18,7 +18,25 @@ class CBTInserter {
     Queue<TreeNode> queue;
 
     public CBTInserter(TreeNode root) {
-        
+        queue = new LinkedList<>();
+
+        Queue<TreeNode> temp = new LinkedList<>();
+        temp.add(root);
+
+        while (!temp.isEmpty()) {
+            TreeNode node = temp.poll();
+
+            if (node.left != null)
+                temp.add(node.left);
+
+            if (node.right != null)
+                temp.add(node.right);
+
+            // Node having an empty child
+            if (node.left == null || node.right == null) {
+                queue.add(node);
+            }
+        }
     }
     
     public int insert(int val) {
