@@ -2,15 +2,18 @@ import java.util.*;
 
 class CBTInserter {
 
-    Queue<TreeNode> queue;
+    TreeNode root;
+    Queue<TreeNode> queue = new LinkedList<>();
 
     public CBTInserter(TreeNode root) {
-        queue = new LinkedList<>();
+
+        this.root = root;
 
         Queue<TreeNode> temp = new LinkedList<>();
         temp.add(root);
 
         while (!temp.isEmpty()) {
+
             TreeNode node = temp.poll();
 
             if (node.left != null)
@@ -19,7 +22,6 @@ class CBTInserter {
             if (node.right != null)
                 temp.add(node.right);
 
-            // Node having an empty child
             if (node.left == null || node.right == null) {
                 queue.add(node);
             }
@@ -45,6 +47,6 @@ class CBTInserter {
     }
 
     public TreeNode get_root() {
-        return queue.peek(); // Not correct
+        return root;
     }
 }
