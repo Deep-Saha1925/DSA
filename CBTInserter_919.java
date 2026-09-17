@@ -1,18 +1,5 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
+import java.util.*;
+
 class CBTInserter {
 
     Queue<TreeNode> queue;
@@ -38,19 +25,26 @@ class CBTInserter {
             }
         }
     }
-    
+
     public int insert(int val) {
-        
+
+        TreeNode parent = queue.peek();
+
+        TreeNode newNode = new TreeNode(val);
+
+        if (parent.left == null) {
+            parent.left = newNode;
+        } else {
+            parent.right = newNode;
+            queue.poll();
+        }
+
+        queue.add(newNode);
+
+        return parent.val;
     }
-    
+
     public TreeNode get_root() {
-        
+        return queue.peek(); // Not correct
     }
 }
-
-/**
- * Your CBTInserter object will be instantiated and called as such:
- * CBTInserter obj = new CBTInserter(root);
- * int param_1 = obj.insert(val);
- * TreeNode param_2 = obj.get_root();
- */
