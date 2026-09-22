@@ -25,5 +25,11 @@ class Solution {
         if (left != null) {
             return left;
         }
+
+        return getTargetCopy(
+            original.right,
+            cloned.right,
+            target
+        );
     }
 }
