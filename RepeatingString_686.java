@@ -1,5 +1,6 @@
 class Solution {
     public int repeatedStringMatch(String a, String b) {
+
         StringBuilder s = new StringBuilder();
         int count = 0;
 
@@ -17,6 +18,10 @@ class Solution {
         s.append(a);
         count++;
 
-        return count;
+        if (s.toString().contains(b)) {
+            return count;
+        }
+
+        return -1;
     }
 }
