@@ -5,5 +5,11 @@ class Solution {
         if (!bankSet.contains(endGene)) {
             return -1;
         }
+
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(startGene);
+        
+        char[] possibleGenes = new char[]{'A', 'C', 'G', 'T'};
+        int steps = 0;
     }
 }
