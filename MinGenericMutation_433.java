@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public int minMutation(String startGene, String endGene, String[] bank) {
         Set<String> bankSet = new HashSet<>(Arrays.asList(bank));
@@ -41,5 +43,7 @@ class Solution {
             }
             steps++;
         }
+
+        return -1; // If the queue empties and target is not reached
     }
 }
