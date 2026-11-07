@@ -1,8 +1,10 @@
-class Solution {
-    public int calPoints(String[] ops) {
-        Stack<Integer> s = new Stack<>();
+import java.util.*;
 
-        for(String s: ops){
+class Solution {
+    public int calPoints(String[] operations) {
+        Stack<Integer> st = new Stack<>();
+
+        for (String s : operations) {
             if (s.equals("C")) {
                 st.pop();
             }
@@ -20,5 +22,13 @@ class Solution {
                 st.push(Integer.parseInt(s));
             }
         }
+
+        int sum = 0;
+
+        for (int n : st) {
+            sum += n;
+        }
+
+        return sum;
     }
 }
