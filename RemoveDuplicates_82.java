@@ -1,31 +1,28 @@
 class Solution {
-    public Node connect(Node root) {
-        if (root == null) return null;
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
 
-        Queue<Node> q = new LinkedList<>();
-        q.add(root);
+        ListNode prev = dummy;
+        ListNode curr = head;
 
-        while (!q.isEmpty()) {
-            int size = q.size();
-            Node prev = null;
+        while (curr != null) {
 
-            for (int i = 0; i < size; i++) {
-                Node curr = q.poll();
+            if (curr.next != null && curr.val == curr.next.val) {
 
-                if (prev != null) {
-                    prev.next = curr;
+                while (curr.next != null && curr.val == curr.next.val) {
+                    curr = curr.next;
                 }
 
-                prev = curr;
-
-                if (curr.left != null)
-                    q.add(curr.left);
-
-                if (curr.right != null)
-                    q.add(curr.right);
+                prev.next = curr.next;
+            } 
+            else {
+                prev = prev.next;
             }
+
+            curr = curr.next;
         }
 
-        return root;
+        return dummy.next;
     }
 }
